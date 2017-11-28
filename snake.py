@@ -257,3 +257,4 @@ def start_game():
 
 # Start the snake game.
 start_game()
+
