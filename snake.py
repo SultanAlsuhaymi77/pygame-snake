@@ -1,5 +1,4 @@
 ## Direction DONE ! 
-
 '''
 Snake game.
 Authors:
@@ -52,8 +51,8 @@ def get_direction(previous_direction, event_key):
         return DIRECTION_UP
     elif event_key == pygame.K_DOWN:
         return DIRECTION_DOWN
-    elif event_key == pygame.K_LEFT:
-        return DIRECTION_LEFT
+    elif event_key == pygame.K_RIGHT:
+        return DIRECTION_RIGHT
 
     return previous_direction
 
