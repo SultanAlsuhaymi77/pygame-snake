@@ -1,7 +1,9 @@
+## Direction DONE ! 
+
 '''
 Snake game.
 Authors:
-<insert the names of your teammates here>
+<SultanAlsuhaymi>
 '''
 
 import pygame
@@ -13,7 +15,7 @@ GRID_WIDTH = 30
 # The game grid contains this many cells in the y direction. A piece of food or a segment of the snake takes up one cell.
 GRID_HEIGHT = 30
 # The height and width of each square cell in pixels.
-PIXELS_IN_CELL = 20
+PIXELS_IN_CELL = 15
 # The width of the game grid in pixels.
 GRID_WIDTH_PIXELS = PIXELS_IN_CELL * GRID_WIDTH
 # The height of the game grid in pixels.
@@ -48,6 +50,11 @@ def get_direction(previous_direction, event_key):
         return DIRECTION_LEFT
     elif event_key == pygame.K_UP:
         return DIRECTION_UP
+    elif event_key == pygame.K_DOWN:
+        return DIRECTION_DOWN
+    elif event_key == pygame.K_LEFT:
+        return DIRECTION_LEFT
+
     return previous_direction
 
 def create_food_position():
@@ -257,4 +264,3 @@ def start_game():
 
 # Start the snake game.
 start_game()
-
