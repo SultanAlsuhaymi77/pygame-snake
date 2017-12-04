@@ -2,7 +2,7 @@
 '''
 Snake game.
 Authors:
-<SultanAlsuhaymi>
+<SultanAlsuhaymi> Donald Conteh , Kedar Timalsena, Charnelle Kaham
 '''
 
 import pygame
