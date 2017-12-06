@@ -1,6 +1,3 @@
-# DONE !
-
-
 '''
 Snake game.
 Authors:
@@ -33,11 +30,11 @@ DIRECTION_DOWN = (0, 1)
 # Background color of the snake grid.
 COLOR_BACKGROUND = (255, 255, 255)  # rgb color for white
 # This is the color of the snake's head. 
-COLOR_SNAKE_HEAD = (250, 250, 0)      # rgb color for red
+COLOR_SNAKE_HEAD = (250, 0, 250)      # rgb color for red
 # This is the color of the rest of the snake.
 COLOR_SNAKE = (0, 255, 0)           # rgb color for green
 # This is the color for the snake's food.
-COLOR_FOOD = (255, 255, 0)          # rgb color for orange
+COLOR_FOOD = (0, 0, 0)          # rgb color for orange
 # This is the color for the game over text.
 COLOR_GAME_OVER_TEXT = (0, 0, 0)    # rgb color for black
 
@@ -65,8 +62,8 @@ def create_food_position():
     The first element is the x position. Must be an int between 0 and GRID_WIDTH - 1, inclusively.
     The second element is the y position. Must be an int between 0 and GRID_HEIGHT - 1, inclusively.
     """
-    food1 = random.randint(0,GRID_WIDTH - 1)
-    food2 = random.randint(0, GRID_HEIGHT - 1)
+    food1 = random.randint(1,GRID_WIDTH - 1)
+    food2 = random.randint(1, GRID_HEIGHT - 1)
 
     return food1, food2
 
@@ -107,8 +104,9 @@ def snake_intersected_body(snake):
     of any of its body segments.
     """
 
-    for x,y in snake[1:]:
-        if snake[0][0] == x and snake[0][1] == y:
+    for a,b in snake[1:]:
+
+        if snake[0][0]== a and snake[0][1] == b:
             return True
 
       #6
@@ -121,6 +119,7 @@ def get_score(snake):
     """
     return (len((snake)*10))
 
+  
     #7
 def get_game_over_text(score):
     """Returns the text to draw on the screen after the game is over.
@@ -128,6 +127,7 @@ def get_game_over_text(score):
     score - integer representing the current score of the game.
     """
     return 'Game Over. Your Score:' + str(score)
+  
     #8
 def get_snake_speed(snake):
     """Return the number of cells the snake should travel in one second.
@@ -135,9 +135,11 @@ def get_snake_speed(snake):
     The speed at the beginning of the game should be 5. Once the snake has eaten 10 pieces of food,
     the speed of the game should increase (by how much is up to you).
     """
-    speedSteps = 5
-    snakeLen = len(snake)
-    speed = ((snakeLen - snakeLen % 10)/10)*speedSteps
+    s = 5
+    
+    l = len(snake)
+    
+    speed = ((l - l % 10)/10)*s
     return speed
 
 
